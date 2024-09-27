@@ -1,0 +1,72 @@
+<?php $webRoot = $_SERVER['DOCUMENT_ROOT']; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header01.php" ); echo PHP_EOL; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header02_styles.php" ); echo PHP_EOL; ?>
+  <link rel="stylesheet" href="/cms/wp-content/themes/hoppe/assets/styles/page.css" media="nope!" onload="this.media='all'">
+  <title></title>
+  <?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header03.php" ); echo PHP_EOL; ?>
+    <div id="head" class="wrap-pc">
+      <h1 class="wrap-sp title01-pc color01" data-en="ContactUs">お問い合わせ</h1>
+      <nav id="breadcrumbs" aria-label="Breadcrumb" class="wrap-sp">
+        <ol class="text lh">
+          <li><a href="/">HOME</a></li>
+          <li>お問い合わせ</li>
+        </ol>
+      </nav>
+    </div>
+    <section id="contact" class="wrap">
+      <form action="/contact/confirm/" method="POST">
+        <p class="text lh-l center-pc">アプリに関するお問い合わせなど、こちらのフォームからご連絡ください</p>
+        <dl>
+          <div>
+            <dt><label>名前</label></dt>
+            <dd class="names">
+              <input type="text" id="contact_name0101" name="contact_name0101" autocomplete="family-name" placeholder="山田">
+              <input type="text" id="contact_name0102" name="contact_name0102" autocomplete="family-name" placeholder="太郎">
+            </dd>
+          </div>
+          <div>
+            <dt><label>ふりがな</label></dt>
+            <dd class="names">
+              <input type="text" id="contact_name0201" name="contact_name0201" placeholder="やまだ">
+              <input type="text" id="contact_name0202" name="contact_name0202" placeholder="たろう">
+            </dd>
+          </div>
+          <div>
+            <dt><label for="contact_email">メールアドレス</label></dt>
+            <dd class="mails">
+              <input type="text" id="contact_email" name="contact_email" autocomplete="email" placeholder="kanrishikentei@kanrishi.com">
+              <p>確認画のためもう一度</p>
+              <input type="text" id="contact_email_confirm" name="contact_email_confirm" autocomplete="email" placeholder="kanrishikentei@kanrishi.com">
+            </dd>
+          </div>
+          <div>
+            <dt><label>お問い合わせ項目</label></dt>
+            <dd class="checkboxies">
+              <ul>
+                <li><label><input type="checkbox" name="subjects[]" value="アプリの操作に関して">アプリの操作に関して</label></li>
+                <li><label><input type="checkbox" name="subjects[]" value="アプリの不具合に関して" checked>アプリの不具合に関して</label></li>
+                <li><label><input type="checkbox" name="subjects[]" value="その他のこと">その他のこと</label></li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt><label for="contact_content">お問い合わせ内容</label></dt>
+            <dd>
+              <textarea name="contact_content" id="contact_content"></textarea>
+            </dd>
+          </div>
+        </dl>
+        <h4 class="lede01-pc center-pc">個人情報保護方針への同意</h4>
+        <div class="privacies">
+          <div class="scroll">
+            <p>
+              コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント★コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント★コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント★コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント●コメント◯コメント◎コメント◯コメント★
+            </p>
+          </div>
+        </div>
+        <button type="submit" class="link03">確認画面へ</button>
+      </form>
+    </section>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer01.php" ); echo PHP_EOL; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer02_scripts.php" ); echo PHP_EOL; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer03.php" ); echo PHP_EOL; ?>

@@ -1,0 +1,85 @@
+<?php $webRoot = $_SERVER['DOCUMENT_ROOT']; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header01.php" ); echo PHP_EOL; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header02_styles.php" ); echo PHP_EOL; ?>
+  <link rel="stylesheet" href="/cms/wp-content/themes/hoppe/assets/styles/page.css" media="nope!" onload="this.media='all'">
+  <title></title>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header03.php" ); echo PHP_EOL; ?>
+    <div id="head" class="wrap-pc">
+      <h1 class="wrap-sp title01-pc color01" data-en="Search for a pharmacy">薬局検索</h1>
+      <nav id="breadcrumbs" aria-label="Breadcrumb" class="wrap-sp">
+        <ol class="text lh">
+          <li><a href="/">HOME</a></li>
+          <li>薬局検索</li>
+        </ol>
+      </nav>
+    </div>
+    <search id="searchPharmacy" class="wrap">
+      <form method="GET" action="/pharmacy/list/">
+        <dl>
+          <div>
+            <dt><label for="searchName" class="text-l-pc lh-l-pc">薬局名</label></dt>
+            <dd><input type="text" name="searchName" id="searchName" placeholder="〇〇薬局"></dd>
+          </div>
+          <div>
+            <dt><label for="searchAddress" class="text-l-pc lh-l-pc">住所</label></dt>
+            <dd><input type="text" name="searchAddress" id="searchAddress" placeholder="〇〇市"></dd>
+          </div>
+          <div>
+            <dt><label class="text-l-pc lh-l-pc">対応サービス</label></dt>
+            <dd class="checkboxies">
+              <ul>
+                <li><label class="text lh-s"><input type="checkbox" name="servicies[]" value="おくすり自動送信">おくすり自動送信</label></li>
+                <li><label class="text lh-s"><input type="checkbox" name="servicies[]" value="処方せん送信対応">処方せん送信対応</label></li>
+                <li><label class="text lh-s"><input type="checkbox" name="servicies[]" value="項目名項目名">項目名項目名</label></li>
+                <li><label class="text lh-s"><input type="checkbox" name="servicies[]" value="項目名項目名">項目名項目名</label></li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+        <button type="submit" class="link01 center">検索する</button>
+      </form>
+    </search>
+    <section id="pharmacy">
+      <h2 class="title01 color01 center">MAPから探す</h2>
+      <div id="map"></div>
+    </section>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer01.php" ); echo PHP_EOL; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer02_scripts.php" ); echo PHP_EOL; ?>
+  <script>
+    (
+      g=>{
+        var
+          h , a , k , p = "The Google Maps JavaScript API" ,
+          c = "google" ,
+          l = "importLibrary" ,
+          q = "__ib__" ,
+          m = document ,
+          b = window
+        ;
+        b=b[c]||(b[c]={});
+        var
+          d = b.maps || ( b.maps = {} ) ,
+          r=new Set ,
+          e=new URLSearchParams ,
+          u = ()=> h || ( h=new Promise( async( f , n )=>{
+            await ( a = m.createElement("script") );
+            e.set( "libraries" , [...r] + "" );
+            for( k in g ) e.set( k.replace( /[A-Z]/g , t => "_" + t[0].toLowerCase() ) , g[k] );
+              e.set( "callback" , c + ".maps." + q );
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = ()=> h = n( Error( p + " could not load." ) );
+              a.nonce = m.querySelector( "script[nonce]" )?.nonce || "";
+              m.head.append( a )
+            }
+          ) )
+        ;
+        d[l] ? console.warn( p + " only loads once. Ignoring:" , g ) : d[l] = ( f,...n ) => r.add( f ) && u().then(
+         () => d[l]( f , ...n )
+        )
+      }
+    )
+		( { key : "AIzaSyBU0e3UsqOf5HjIos4Nqsf6bvDtIMKITNg" , v : "weekly" } );
+  </script>
+  <script src="/cms/wp-content/themes/hoppe/assets/scripts/pharmacies.js"></script>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer03.php" ); echo PHP_EOL; ?>

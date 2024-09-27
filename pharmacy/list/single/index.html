@@ -1,0 +1,119 @@
+<?php $webRoot = $_SERVER['DOCUMENT_ROOT']; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header01.php" ); echo PHP_EOL; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header02_styles.php" ); echo PHP_EOL; ?>
+  <link rel="stylesheet" href="/cms/wp-content/themes/hoppe/assets/styles/single.css" media="nope!" onload="this.media='all'">
+  <title></title>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/header03.php" ); echo PHP_EOL; ?>
+    <div id="head" class="wrap-pc">
+      <h2 class="wrap-sp title01-pc color01" data-en="Search for a pharmacy">薬局検索</h2>
+      <nav id="breadcrumbs" aria-label="Breadcrumb" class="wrap-sp">
+        <ol class="text lh">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/pharmacy/">薬局検索</a></li>
+          <li><a href="/pharmacy/list/">薬局検索</a></li>
+          <li>マツモトキヨシ マミーマート松戸新田店</li>
+        </ol>
+      </nav>
+    </div>
+    <article id="pharmacy" class="wrap-pc">
+      <div class="box">
+        <div class="info wrap-sp">
+          <h1 class="title02-sp color01">マツモトキヨシ マミーマート松戸新田店</h1>
+          <ul>
+            <li class="medicine">おくすり自動送信</li>
+            <li class="prescription">処方せん送信対応</li>
+          </ul>
+          <picture>
+            <source srcset="/cms/wp-content/themes/hoppe/assets/images/ui/thumbnail/pharmarcy.avif" type="image/avif">
+            <img class="full" src="/cms/wp-content/themes/hoppe/assets/images/ui/thumbnail/pharmarcy.webp" alt="マツモトキヨシ マミーマート松戸新田店" loading="lazy" decoding="async" width="734" height="476">
+          </picture>
+          <dl>
+            <dt>住所</dt>
+            <dd>千葉県千葉市花見川区南花園1-44-9高山ビル102</dd>
+            <dt>電話番号</dt>
+            <dd>047-1234-5678</dd>
+            <dt>定休日</dt>
+            <dd>
+              <ul>
+                <li>日曜</li>
+                <li>祝日</li>
+              </ul>
+            </dd>
+            <dt>営業時間</dt>
+            <dd>
+              <dl>
+                <div>
+                  <dt data-before="[" data-after="]">
+                    <ul>
+                      <li>月</li>
+                      <li>火</li>
+                      <li>木</li>
+                      <li>金</li>
+                    </ul>
+                  </dt>
+                  <dd><time>09:00</time>～<time>19:00</time></dd>
+                </div>
+                <div>
+                  <dt data-before="[" data-after="]">水</dt>
+                  <dd><time>09:00</time>～<time>17:30</time></dd>
+                </div>
+                <div>
+                  <dt data-before="[" data-after="]">土</dt>
+                  <dd><time>09:00</time>～<time>15:00</time></dd>
+                </div>
+              </dl>
+            </dd>
+          </dl>
+        </div>
+        <div class="map">
+          <h3 class="title01-sp center-sp title02-pc style-pc">住所・地図</h3>
+          <div id="map"></div>
+          <p class="is-pc">千葉県千葉市花見川区南花園1-44-9高山ビル102　<a href="" data-before="＜" data-after="＞" target="_blank" rel="noopener noreferrer">GoogleMapで見る</a></p>
+        </div>
+      </div>
+      <nav aria-label="pagination" class="paginatinArchive">
+        <a href="" class="prev"><img src="/cms/wp-content/themes/hoppe/assets/images/ui/arrow/prev01.svg" alt="prev" loading="lazy" decoding="async" width="14" height="14"></a>
+        <a href="" class="archive">一覧へ戻る</a>
+        <a href="" class="next"><img src="/cms/wp-content/themes/hoppe/assets/images/ui/arrow/next01.svg" alt="next" loading="lazy" decoding="async" width="14" height="14"></a>
+      </nav>
+    </article>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer01.php" ); echo PHP_EOL; ?>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer02_scripts.php" ); echo PHP_EOL; ?>
+  <script>
+    (
+      g=>{
+        var
+          h , a , k , p = "The Google Maps JavaScript API" ,
+          c = "google" ,
+          l = "importLibrary" ,
+          q = "__ib__" ,
+          m = document ,
+          b = window
+        ;
+        b=b[c]||(b[c]={});
+        var
+          d = b.maps || ( b.maps = {} ) ,
+          r=new Set ,
+          e=new URLSearchParams ,
+          u = ()=> h || ( h=new Promise( async( f , n )=>{
+            await ( a = m.createElement("script") );
+            e.set( "libraries" , [...r] + "" );
+            for( k in g ) e.set( k.replace( /[A-Z]/g , t => "_" + t[0].toLowerCase() ) , g[k] );
+              e.set( "callback" , c + ".maps." + q );
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = ()=> h = n( Error( p + " could not load." ) );
+              a.nonce = m.querySelector( "script[nonce]" )?.nonce || "";
+              m.head.append( a )
+            }
+          ) )
+        ;
+        d[l] ? console.warn( p + " only loads once. Ignoring:" , g ) : d[l] = ( f,...n ) => r.add( f ) && u().then(
+         () => d[l]( f , ...n )
+        )
+      }
+    )
+		( { key : "AIzaSyBU0e3UsqOf5HjIos4Nqsf6bvDtIMKITNg" , v : "weekly" } );
+  </script>
+  <script src="/cms/wp-content/themes/hoppe/assets/scripts/pharmacy.js"></script>
+<?php require_once( $webRoot . "/cms/wp-content/themes/hoppe/footer03.php" ); echo PHP_EOL; ?>
